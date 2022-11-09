@@ -19,23 +19,18 @@ import com.Get.service.seriviceclass;
 @RequestMapping("/api/")
 
 public class TestController {
-
-	
-	
 	@Autowired
 	seriviceclass objseriviceclass;
+	
 	@Value("${userfilepath}")
 	private String filePath;
-
+	
 	@RequestMapping(value = "testAPI", method = RequestMethod.GET)
-	public ResponseEntity<?> testApi(@RequestParam Map<String,String> request)
-			throws Exception {
+	public ResponseEntity<?> testApi(@RequestParam Map<String,String> request)throws Exception {
 		int result = 0;
 		String operation=request.get("operation").toString();
 		int a=Integer.parseInt(request.get("a").toString());
 		int b=Integer.parseInt(request.get("b").toString());
-		
-		
 		switch (operation) {
 
 		case "add":
